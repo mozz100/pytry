@@ -1,0 +1,11 @@
+web:
+  build: .
+  #command: jupyter notebook --no-browser  --ip=0.0.0.0
+  command: sh -c "ipython notebook --ip=0.0.0.0 --no-browser"
+  environment:
+    - PYTHONUNBUFFERED=yes
+  volumes: 
+    - .:/usr/src/app
+  working_dir: /usr/src/app
+  ports:
+    - "8888:8888"
